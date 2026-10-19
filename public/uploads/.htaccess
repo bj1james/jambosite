@@ -1,0 +1,7 @@
+# Evitar ejecución de scripts en uploads
+<FilesMatch "\.(php|phtml|phar)$">
+  Require all denied
+</FilesMatch>
+
+# Opcional: deshabilitar listado de directorio
+Options -Indexes

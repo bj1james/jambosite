@@ -1,0 +1,13 @@
+# Asegura que este archivo se aplique
+Options -MultiViews
+
+RewriteEngine On
+RewriteBase /jambosite/
+
+# Envía TODO a index.php excepto archivos o carpetas reales
+RewriteCond %{REQUEST_FILENAME} !-f
+RewriteCond %{REQUEST_FILENAME} !-d
+RewriteRule ^ index.php [QSA,L]
+
+# (Opcional) Define index por si el host no lo tiene
+DirectoryIndex index.php

@@ -1,0 +1,2197 @@
+body{ color:#222; }
+.nav-link{ color:#333; }
+.nav-link:hover{ color:var(--brand-accent); }
+.card-title { letter-spacing:.2px; color:var(--brand-primary); }
+footer a { color:#fff; text-decoration: underline; }
+
+/* Opcional: ya usamos .table-warning de Bootstrap para no leídos */
+
+/* Mejora visual opcional */
+.btn-primary {
+    box-shadow: 0 6px 20px rgba(10,132,255,.15);
+  }
+  .btn-primary:hover {
+    transform: translateY(-1px);
+    transition: all .15s ease;
+  }
+  
+  .carousel .carousel-item img {
+    border-radius: .5rem;
+  }
+  /* --- Estilos existentes --- */
+body{ color:#222; }
+.nav-link{ color:#333; }
+.nav-link:hover{ color:var(--brand-accent); }
+.card-title { letter-spacing:.2px; color:var(--brand-primary); }
+footer a { color:#fff; text-decoration: underline; }
+
+/* --- Mejoras visuales --- */
+.btn-primary {
+  box-shadow: 0 6px 20px rgba(10,132,255,.15);
+  transition: all .15s ease;
+}
+.btn-primary:hover { transform: translateY(-1px); }
+
+/* Altura consistente en carrousels del hero y de “Nosotros” */
+.hero-fixed-height { height: 380px; }
+.hero-img { height: 380px; object-fit: cover; }
+
+/* Bordes y sombras más suaves */
+.carousel, .img-fluid.rounded.shadow {
+  border-radius: .6rem;
+  box-shadow: 0 10px 24px rgba(0,0,0,.08);
+}
+/* ===============================
+   Tamaños estándar para carruseles
+   =============================== */
+
+/* Opción A (Recomendada): relación 16:9 fluida + altura máxima controlada */
+.carousel-fixed {
+    position: relative;
+    border-radius: .65rem;
+    overflow: hidden;
+    box-shadow: 0 10px 24px rgba(0,0,0,.08);
+  }
+  
+  /* Mantiene 16:9 en navegadores modernos */
+  .carousel-fixed .carousel-inner {
+    aspect-ratio: 16 / 9;
+  }
+  
+  /* Fallback si el navegador no soporta aspect-ratio */
+  @supports not (aspect-ratio: 16 / 9) {
+    .carousel-fixed .carousel-inner {
+      position: relative;
+      width: 100%;
+      /* 16:9 usando padding-hack */
+      padding-top: 56.25%;
+    }
+    .carousel-fixed .carousel-item,
+    .carousel-fixed .carousel-item > img {
+      position: absolute;
+      inset: 0;
+      height: 100%;
+      width: 100%;
+    }
+  }
+  
+  /* Imagen siempre del mismo tamaño (rellena y recorta) */
+  .carousel-fixed .carousel-item > img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;     /* Rellena sin deformar */
+    object-position: center center;
+    display: block;
+  }
+  
+  /* Limitar alturas máximas para evitar carruseles gigantes en desktop */
+  @media (min-width: 992px) {
+    .carousel-fixed .carousel-inner {
+      max-height: 380px;   /* Ajusta este valor si quieres más/menos alto */
+    }
+  }
+  @media (max-width: 991.98px) {
+    .carousel-fixed .carousel-inner {
+      max-height: 320px;
+    }
+  }
+  
+  /* Opcional: carrusel con fade más elegante */
+  .carousel.carousel-fade .carousel-item {
+    transition: opacity .6s ease-in-out;
+  }
+  
+  /* Opcional: estilos sutiles a los controles */
+  .carousel-control-prev-icon,
+  .carousel-control-next-icon {
+    filter: drop-shadow(0 2px 6px rgba(0,0,0,.3));
+  }
+
+  /* ===============================
+   Tamaños estándar para carruseles
+   =============================== */
+
+.carousel-fixed {
+    position: relative;
+    border-radius: .65rem;
+    overflow: hidden;
+    box-shadow: 0 10px 24px rgba(0,0,0,.08);
+  }
+  
+  /* Mantener relación 16:9 fluida */
+  .carousel-fixed .carousel-inner {
+    aspect-ratio: 16 / 9;
+  }
+  
+  /* Fallback si no hay soporte de aspect-ratio */
+  @supports not (aspect-ratio: 16 / 9) {
+    .carousel-fixed .carousel-inner {
+      position: relative;
+      width: 100%;
+      padding-top: 56.25%; /* 16:9 */
+    }
+    .carousel-fixed .carousel-item,
+    .carousel-fixed .carousel-item > img {
+      position: absolute;
+      inset: 0;
+      height: 100%;
+      width: 100%;
+    }
+  }
+  
+  /* Imagen ocupa toda el área sin deformarse */
+  .carousel-fixed .carousel-item > img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    object-position: center center;
+    display: block;
+  }
+  
+  /* Limitar altura máxima (evita carruseles gigantes) */
+  @media (min-width: 992px) {
+    .carousel-fixed .carousel-inner { max-height: 380px; }
+  }
+  @media (max-width: 991.98px) {
+    .carousel-fixed .carousel-inner { max-height: 320px; }
+  }
+  
+  /* Opcional: transición tipo fade más elegante */
+  .carousel.carousel-fade .carousel-item {
+    transition: opacity .6s ease-in-out;
+  }
+  .carousel-control-prev-icon,
+  .carousel-control-next-icon {
+    filter: drop-shadow(0 2px 6px rgba(0,0,0,.3));
+  }
+  /* ===============================
+   Carruseles con tamaño estándar
+   =============================== */
+
+/* Contenedor con bordes y sombra */
+.carousel-fixed {
+    position: relative;
+    border-radius: .65rem;
+    overflow: hidden;
+    box-shadow: 0 10px 24px rgba(0,0,0,.08);
+  }
+  
+  /* Ventana fija en ALTURA (elige una) */
+  
+  /* Opción recomendada: alto fijo de 380px en desktop, 300px en móvil */
+  .carousel-fixed .carousel-inner {
+    height: 380px;              /* altura estándar en desktop */
+  }
+  @media (max-width: 991.98px) {
+    .carousel-fixed .carousel-inner { height: 300px; } /* móvil/tablet */
+  }
+  
+  /* Cada slide ocupa toda la ventana y no cambia de tamaño */
+  .carousel-fixed .carousel-item {
+    position: relative;
+    width: 100%;
+    height: 100%;
+  }
+  
+  /* Imagen cubre la ventana sin deformarse (recorta lo que sobra) */
+  .carousel-fixed .carousel-item > img {
+    position: absolute;
+    inset: 0;                   /* top:0; right:0; bottom:0; left:0 */
+    width: 100%;
+    height: 100%;
+    object-fit: cover;          /* rellena sin distorsionar */
+    object-position: center;    /* centrada */
+    display: block;
+  }
+  
+  /* Opcional: efecto fade más elegante al transicionar */
+  .carousel.carousel-fade .carousel-item {
+    transition: opacity .6s ease-in-out;
+  }
+  
+  /* Opcional: mejor visibilidad de flechas */
+  .carousel-control-prev-icon,
+  .carousel-control-next-icon {
+    filter: drop-shadow(0 2px 6px rgba(0,0,0,.35));
+  }
+  /* ===============================
+   Carruseles con ventana estándar
+   =============================== */
+
+.carousel-fixed {
+    position: relative;
+    border-radius: .65rem;
+    overflow: hidden;
+    box-shadow: 0 10px 24px rgba(0,0,0,.08);
+  }
+  
+  /* Alto fijo (uniforme) — ajusta a tu gusto */
+  .carousel-fixed .carousel-inner { height: 380px; }
+  @media (max-width: 991.98px) {
+    .carousel-fixed .carousel-inner { height: 300px; }
+  }
+  
+  /* Cada slide ocupa toda la ventana */
+  .carousel-fixed .carousel-item {
+    position: relative;
+    width: 100%;
+    height: 100%;
+  }
+  
+  /* La imagen rellena la ventana sin deformarse (recorta excedentes) */
+  .carousel-fixed .carousel-item > img {
+    position: absolute;
+    inset: 0;
+    width: 100%;
+    height: 100%;
+    object-fit: cover;     /* ¡clave! */
+    object-position: center center;
+    display: block;
+  }
+  
+  /* Opcional: fade más elegante */
+  .carousel.carousel-fade .carousel-item {
+    transition: opacity .6s ease-in-out;
+  }
+
+  /* Carruseles con ventana estándar (mismo tamaño siempre) */
+.carousel-fixed {
+    position: relative;
+    border-radius: .65rem;
+    overflow: hidden;
+    box-shadow: 0 10px 24px rgba(0,0,0,.08);
+  }
+  
+  /* Alto fijo del carrusel (ajústalo a tu gusto) */
+  .carousel-fixed .carousel-inner { height: 380px; }
+  @media (max-width: 991.98px) {
+    .carousel-fixed .carousel-inner { height: 300px; }
+  }
+  
+  /* Los items ocupan toda la ventana */
+  .carousel-fixed .carousel-item { position: relative; width: 100%; height: 100%; }
+  
+  /* La imagen rellena sin deformarse (recorta lo que sobra) */
+  .fit-cover { height: 100%; object-fit: cover; object-position: center; }
+  
+  /* Iconos más visibles */
+  .carousel-control-prev-icon, .carousel-control-next-icon {
+    filter: drop-shadow(0 2px 6px rgba(0,0,0,.35));
+  }
+
+  /* ===== Hero tamaño fijo, overlay y fade ===== */
+.hero-wrap {
+    position: relative;
+    background: linear-gradient(180deg,#ffffff 0%, #f3f6ff 100%);
+    overflow: hidden;
+  }
+  .hero-carousel.carousel-fixed { border-radius: .8rem; overflow: hidden; }
+  .hero-carousel .carousel-inner { height: 420px; }            /* altura estándar */
+  @media (max-width: 991.98px){ .hero-carousel .carousel-inner { height: 320px; } }
+  
+  .hero-carousel .carousel-item,
+  .hero-carousel .carousel-item img {
+    width: 100%;
+    height: 100%;
+  }
+  .hero-carousel .carousel-item img {
+    object-fit: cover;
+    object-position: center center;
+    display: block;
+  }
+  
+  /* Overlay degradado sobre las imágenes (mejora legibilidad del texto) */
+  .hero-overlay {
+    position: absolute; inset: 0;
+    background: linear-gradient(90deg, rgba(0,0,0,.35) 0%, rgba(0,0,0,.20) 45%, rgba(0,0,0,0) 75%);
+    pointer-events: none;
+  }
+  @media (max-width: 991.98px){
+    .hero-overlay { background: linear-gradient(180deg, rgba(0,0,0,.40) 0%, rgba(0,0,0,.0) 55%); }
+  }
+  
+  /* Caja de texto con efecto "glass" opcional */
+  .hero-glass {
+    backdrop-filter: blur(6px);
+    background: rgba(255,255,255,.55);
+    border: 1px solid rgba(255,255,255,.5);
+    border-radius: .75rem;
+  }
+  
+  /* Indicadores más visibles */
+  .hero-carousel .carousel-indicators [data-bs-target]{
+    width: 10px; height: 10px; border-radius: 50%;
+  }
+  
+  /* ===========================
+   HERO como fondo con overlay
+   =========================== */
+.hero {
+    position: relative;
+    background: linear-gradient(180deg,#ffffff 0%, #f3f6ff 100%);
+    overflow: hidden;
+  }
+  
+  /* Carrusel del hero: altura fija (ajústala si quieres) */
+  .hero .hero-carousel {
+    position: relative;
+    border-radius: .75rem;
+    overflow: hidden;
+    box-shadow: 0 10px 24px rgba(0,0,0,.08);
+  }
+  .hero .hero-carousel .carousel-inner { height: 440px; }  /* ← altura estándar desktop */
+  @media (max-width: 991.98px){
+    .hero .hero-carousel .carousel-inner { height: 320px; }  /* móvil/tablet */
+  }
+  
+  /* Cada slide es una “lona” de fondo */
+  .hero-slide {
+    position: relative;
+    width: 100%;
+    height: 100%;
+  }
+  .hero-bg {
+    position: absolute; inset: 0;
+    background-size: cover;         /* Rellena sin deformar */
+    background-position: center;    /* Centrada */
+    background-repeat: no-repeat;
+    transform: translateZ(0);       /* evita parpadeos en algunos navegadores */
+  }
+  
+  /* Overlay opaco/traslúcido por encima del fondo */
+  .hero-overlay {
+    position: absolute; inset: 0;
+    background: linear-gradient(90deg, rgba(0,0,0,.35) 0%, rgba(0,0,0,.25) 45%, rgba(0,0,0,0) 85%);
+    pointer-events: none;
+  }
+  @media (max-width: 991.98px){
+    .hero-overlay {
+      background: linear-gradient(180deg, rgba(0,0,0,.45) 0%, rgba(0,0,0,.15) 55%, rgba(0,0,0,0) 90%);
+    }
+  }
+  
+  /* Caja de texto (opcional estilo glass) */
+  .hero-textbox {
+    backdrop-filter: blur(6px);
+    background: rgba(255,255,255,.55);
+    border: 1px solid rgba(255,255,255,.5);
+    border-radius: .75rem;
+  }
+  
+  /* Indicadores más visibles (puntitos) */
+  .hero .carousel-indicators [data-bs-target]{
+    width: 10px; height: 10px; border-radius: 50%;
+  }
+  
+  /* (Opcional) Transición fade más suave si usas .carousel-fade */
+  .hero .carousel.carousel-fade .carousel-item {
+    transition: opacity .7s ease-in-out;
+  }
+
+  /* ===========================
+   HERO como fondo con overlay
+   =========================== */
+
+/* Contenedor general del hero (fondo suave de base) */
+.hero {
+    padding-top: 2rem;
+    padding-bottom: 2rem;
+    background: linear-gradient(180deg,#ffffff 0%, #f3f6ff 100%);
+  }
+  
+  /* Carrusel del hero: ventana con altura fija (ajústala a tu gusto) */
+  .hero .hero-carousel .carousel-inner { height: 420px; }
+  @media (max-width: 991.98px){
+    .hero .hero-carousel .carousel-inner { height: 320px; }
+  }
+  
+  /* Cada slide: capa que ocupa toda la ventana */
+  .hero .hero-slide { position: relative; width: 100%; height: 100%; }
+  
+  /* Fondo del slide (no se deforma) */
+  .hero .hero-bg {
+    position: absolute; inset: 0;
+    background-size: cover;
+    background-position: center;
+    background-repeat: no-repeat;
+    transform: translateZ(0);
+  }
+  
+  /* Overlay opaco/traslúcido por encima del fondo */
+  .hero .hero-overlay {
+    position: absolute; inset: 0;
+    background: linear-gradient(180deg, rgba(0,0,0,.35) 0%, rgba(0,0,0,.15) 55%, rgba(0,0,0,0) 100%);
+    pointer-events: none;
+  }
+  
+  /* Texto centrado delante del slide */
+  .hero .hero-center {
+    position: absolute;
+    top: 50%; left: 50%;
+    transform: translate(-50%,-50%);
+    width: 100%;
+    max-width: 900px;
+  }
+  
+  /* Indicadores visibles */
+  .hero .carousel-indicators [data-bs-target]{
+    width: 10px; height: 10px; border-radius: 50%;
+  }
+  
+  /* Opcional: transición fade más suave */
+  .hero .carousel.carousel-fade .carousel-item {
+    transition: opacity .7s ease-in-out;
+  }
+  /* === Base existente del proyecto (se mantiene) === */
+body{ color:#222; }
+.nav-link{ color:#333; }
+.nav-link:hover{ color:var(--brand-accent); }
+.card-title { letter-spacing:.2px; color:var(--brand-primary); }
+footer a { color:#fff; text-decoration: underline; }
+
+/* ===== HERO como fondo con overlay y altura fija ===== */
+.hero {
+  padding-top: 2rem;
+  padding-bottom: 2rem;
+  background: linear-gradient(180deg,#ffffff 0%, #f3f6ff 100%);
+}
+
+.hero .hero-carousel {
+  position: relative;
+  border-radius: .75rem;
+  overflow: hidden;
+  box-shadow: 0 10px 24px rgba(0,0,0,.08);
+}
+
+/* Altura estándar del hero (ajústala a tu gusto) */
+.hero .hero-carousel .carousel-inner { height: 420px; }
+@media (max-width: 991.98px){
+  .hero .hero-carousel .carousel-inner { height: 320px; }
+}
+
+/* Lona del slide */
+.hero .hero-slide { position: relative; width: 100%; height: 100%; }
+
+/* Fondo (no se deforma) */
+.hero .hero-bg {
+  position: absolute; inset: 0;
+  background-size: cover;         /* rellena sin deformar */
+  background-position: center;
+  background-repeat: no-repeat;
+  transform: translateZ(0);
+}
+
+/* Overlay para legibilidad del texto */
+.hero .hero-overlay {
+  position: absolute; inset: 0;
+  background: linear-gradient(180deg, rgba(0,0,0,.35) 0%, rgba(0,0,0,.15) 55%, rgba(0,0,0,0) 100%);
+  pointer-events: none;
+}
+
+/* Texto centrado delante */
+.hero .hero-center {
+  position: absolute;
+  top: 50%; left: 50%;
+  transform: translate(-50%,-50%);
+  width: 100%;
+  max-width: 900px;
+}
+
+/* Indicadores (puntitos) visibles */
+.hero .carousel-indicators [data-bs-target]{
+  width: 10px; height: 10px; border-radius: 50%;
+}
+
+/* Fade suave opcional (ya usamos carousel-fade) */
+.hero .carousel.carousel-fade .carousel-item {
+  transition: opacity .7s ease-in-out;
+}
+
+/* ===========================
+   HERO grande + efecto neblina
+   =========================== */
+
+/* Contenedor del hero (fondo suave base) */
+.hero {
+    padding-top: 2rem;
+    padding-bottom: 2rem;
+    background: linear-gradient(180deg, #ffffff 0%, #f3f6ff 100%);
+  }
+  
+  /* Carrusel del hero: altura ESTÁNDAR (ajústala a tu gusto) */
+  .hero .hero-carousel {
+    position: relative;
+    border-radius: 14px;
+    overflow: hidden;
+    box-shadow: 0 16px 40px rgba(0,0,0,.12);
+  }
+  
+  /* ALTURA: cambia 560px si lo quieres más bajo/alto (p.ej. 480, 600) */
+  .hero .hero-carousel .carousel-inner {
+    height: 560px; /* ← altura desktop */
+  }
+  @media (max-width: 991.98px){
+    .hero .hero-carousel .carousel-inner { height: 380px; } /* móvil/tablet */
+  }
+  
+  /* Cada slide ocupa toda la ventana */
+  .hero .hero-slide { position: relative; width: 100%; height: 100%; }
+  
+  /* Fondo del slide (no se deforma) */
+  .hero .hero-bg {
+    position: absolute; inset: 0;
+    background-size: cover;          /* rellena sin deformar */
+    background-position: center;
+    background-repeat: no-repeat;
+    transform: translateZ(0);
+  }
+  
+  /* ===== Overlay NEBLINA =====
+     1) Capa blanca translúcida
+     2) Desenfoque real del contenido de fondo (backdrop-filter)
+     3) Degradado sutil para bordes */
+  .hero .hero-fog {
+    position: absolute; inset: 0;
+    background: rgba(255,255,255, .18);        /* ← Velo blanco (ajusta opacidad: .12–.28) */
+    backdrop-filter: blur(6px);                 /* ← Desenfoque de lo que hay detrás */
+    -webkit-backdrop-filter: blur(6px);
+    pointer-events: none;
+  }
+  .hero .hero-fog:after {
+    content: "";
+    position: absolute; inset: 0;
+    background: linear-gradient(180deg, rgba(255,255,255,.18) 0%, rgba(255,255,255,0) 40%),
+                linear-gradient(0deg, rgba(0,0,0,.10) 0%, rgba(0,0,0,0) 50%);
+    pointer-events: none;
+  }
+  
+  /* Texto centrado delante del slide */
+  .hero .hero-center {
+    position: absolute;
+    top: 50%; left: 50%;
+    transform: translate(-50%,-50%);
+    width: 100%;
+    max-width: 1000px;
+    padding: 0 16px;
+  }
+  
+  /* Título/subtítulo del hero */
+  .hero .hero-title {
+    font-weight: 800;
+    letter-spacing: -.5px;
+    color: #0e0f13;                  /* texto oscuro sobre neblina */
+    text-shadow: 0 1px 0 rgba(255,255,255,.6);
+  }
+  .hero .hero-subtitle {
+    color: #2f3440;
+    text-shadow: 0 1px 0 rgba(255,255,255,.5);
+  }
+  
+  /* Indicadores visibles (puntitos) */
+  .hero .carousel-indicators [data-bs-target] {
+    width: 10px; height: 10px; border-radius: 50%;
+  }
+  
+  /* Fade suave del carrusel */
+  .hero .carousel.carousel-fade .carousel-item {
+    transition: opacity .8s ease-in-out;
+  }
+  
+  /* Controles con sombra para mejor visibilidad */
+  .hero .carousel-control-prev-icon, 
+  .hero .carousel-control-next-icon {
+    filter: drop-shadow(0 3px 8px rgba(0,0,0,.45));
+  }
+  /* ===== HERO FULL-WIDTH ===== */
+.hero-fw {
+    position: relative;
+    background: linear-gradient(180deg,#ffffff 0%, #f3f6ff 100%);
+    padding: 0;                 /* sin padding vertical extra */
+  }
+  
+  /* El carrusel ocupa todo el ancho de la ventana */
+  .hero-fw .hero-carousel {
+    position: relative;
+    width: 100%;
+    border-radius: 0;           /* sin bordes redondeados para full-bleed */
+    overflow: hidden;
+    box-shadow: none;
+  }
+  
+  /* Altura estándar del hero (ajústala a tu gusto) */
+  .hero-fw .hero-carousel .carousel-inner {
+    height: 600px;              /* ← más alto y protagónico */
+  }
+  @media (max-width: 991.98px){
+    .hero-fw .hero-carousel .carousel-inner { height: 420px; }
+  }
+  
+  /* Cada slide cubre todo la ventana */
+  .hero-fw .hero-slide { position: relative; width: 100%; height: 100%; }
+  .hero-fw .hero-bg {
+    position: absolute; inset: 0;
+    background-size: cover;
+    background-position: center;
+    background-repeat: no-repeat;
+    transform: translateZ(0);
+  }
+  
+  /* Neblina (velo blanco + blur) */
+  .hero-fw .hero-fog {
+    position: absolute; inset: 0;
+    background: rgba(255,255,255,.18);   /* sube/baja opacidad a tu gusto */
+    backdrop-filter: blur(6px);
+    -webkit-backdrop-filter: blur(6px);
+    pointer-events: none;
+  }
+  
+  /* Texto centrado sobre la imagen */
+  .hero-fw .hero-center {
+    position: absolute; top: 50%; left: 50%;
+    transform: translate(-50%,-50%);
+    width: min(92vw, 1100px);
+    text-align: center;
+    padding: 0 16px;
+  }
+  .hero-fw .hero-title {
+    color: #0e0f13;
+    font-weight: 800;
+    letter-spacing: -.5px;
+    text-shadow: 0 1px 0 rgba(255,255,255,.55);
+  }
+  .hero-fw .hero-subtitle {
+    color: #2f3440;
+    text-shadow: 0 1px 0 rgba(255,255,255,.45);
+  }
+  
+  /* Indicadores y controles visibles sobre el fondo */
+  .hero-fw .carousel-indicators [data-bs-target]{
+    width:10px;height:10px;border-radius:50%;
+  }
+  .hero-fw .carousel.carousel-fade .carousel-item { transition: opacity .8s ease-in-out; }
+  .hero-fw .carousel-control-prev-icon, 
+  .hero-fw .carousel-control-next-icon { filter: drop-shadow(0 3px 8px rgba(0,0,0,.45)); }
+
+  /* =========================================================
+   THEME POR SECCIÓN — PRO (paletas y utilitarios)
+   ========================================================= */
+
+/* Base (usa tus variables si existen) */
+:root{
+    --brand-primary: var(--brand-primary, #0f172a);
+    --brand-accent:  var(--brand-accent,  #0A84FF);
+    --neutral-100:#ffffff;
+    --neutral-900:#0f172a;
+  }
+  
+  /* ========== PALETAS (elige una por sección) ========== */
+  
+  /* A) Hero – “Azur Tech” (azules frescos) */
+  .theme-hero-azur {
+    --sec-bg: #0b1220;
+    --sec-bg-soft: #0f172a;
+    --sec-grad-1: #0b1220;
+    --sec-grad-2: #14203b;
+    --sec-text: #e6f0ff;
+    --sec-muted:#b7c4e1;
+    --sec-chip:#1e2a4a;
+    --sec-accent: #5aa9ff; /* botones, enlaces */
+  }
+  
+  /* B) Sobre – “Sage Green” (verde calmado) */
+  .theme-sobre-sage {
+    --sec-bg: #f4fbf6;
+    --sec-bg-soft: #ecf7ef;
+    --sec-grad-1: #f3faf6;
+    --sec-grad-2: #e8f4ee;
+    --sec-text: #0d291e;
+    --sec-muted:#45695b;
+    --sec-chip:#d9efe3;
+    --sec-accent: #19a974;
+  }
+  
+  /* C) Servicios – “Indigo Sand” (indigo + arena) */
+  .theme-serv-indigo {
+    --sec-bg: #f9fafb;
+    --sec-bg-soft: #f5f7ff;
+    --sec-grad-1: #eef2ff;
+    --sec-grad-2: #faf7f0;
+    --sec-text: #111827;
+    --sec-muted:#6b7280;
+    --sec-chip:#e6e9ff;
+    --sec-accent: #6366f1;
+  }
+  
+  /* D) Contacto – “Lilac Mist” (lila/azul suave) */
+  .theme-cta-lilac {
+    --sec-bg: #f7f6ff;
+    --sec-bg-soft: #efecff;
+    --sec-grad-1: #f5f3ff;
+    --sec-grad-2: #eef2ff;
+    --sec-text: #1f1147;
+    --sec-muted:#5f5892;
+    --sec-chip:#e8e6ff;
+    --sec-accent: #7c83ff;
+  }
+  
+  /* ========== Bloques de sección genéricos ========== */
+  .section-wrap {
+    position: relative;
+    overflow: clip;
+  }
+  
+  .section-surface {
+    background: linear-gradient(180deg,var(--sec-grad-1), var(--sec-grad-2));
+  }
+  
+  .section-plain {
+    background: var(--sec-bg);
+  }
+  
+  /* Contenido */
+  .section-wrap .title {
+    color: var(--sec-text);
+    letter-spacing: -.2px;
+  }
+  
+  .section-wrap .subtitle,
+  .section-wrap .muted {
+    color: var(--sec-muted);
+  }
+  
+  /* Chips/checks */
+  .section-wrap .chip {
+    display:inline-flex; align-items:center; gap:.5rem;
+    padding:.4rem .6rem; border-radius: 999px;
+    background: var(--sec-chip);
+    color: var(--sec-text);
+    font-weight: 700; font-size: .85rem;
+  }
+  
+  /* Botón primario/acento */
+  .btn-accent {
+    background: var(--sec-accent);
+    border-color: var(--sec-accent);
+    color: #fff;
+    font-weight: 700;
+  }
+  .btn-accent:hover { filter: brightness(.94); }
+  
+  /* Cards de servicios */
+  .services-card {
+    border: 1px solid rgba(0,0,0,.06);
+    border-radius: 12px;
+    box-shadow: 0 10px 24px rgba(0,0,0,.05);
+    transition: transform .18s ease, box-shadow .18s ease, border-color .18s;
+  }
+  .services-card:hover {
+    transform: translateY(-2px);
+    border-color: rgba(0,0,0,.12);
+    box-shadow: 0 16px 32px rgba(0,0,0,.08);
+  }
+  
+  /* Hero: alto y overlay ligero (si usas imágenes de fondo) */
+  .hero-pro {
+    border-radius: 12px;
+    overflow: hidden;
+    box-shadow: 0 20px 60px rgba(0,0,0,.25);
+  }
+  .hero-pro .overlay-mist {
+    position:absolute; inset:0;
+    background: linear-gradient(90deg, rgba(255,255,255,.12), rgba(255,255,255,.04));
+    backdrop-filter: blur(2px);
+  }
+  
+  /* Espaciados coherentes */
+  .pad-56 { padding: 56px 0; }
+  .pad-72 { padding: 72px 0; }
+  
+  /* Tipografía de títulos grandes */
+  .display-pro { font-weight: 800; line-height: 1.1; }
+  <?php require __DIR__.'/partials/head.php'; ?>
+<?php require __DIR__.'/partials/header.php'; ?>
+
+<!-- ========================== HERO (fondo + overlay + texto delante) ========================== -->
+
+<?php
+  $homeTitle = ($home['title'] ?? '') ?: 'Servicios de TI para tu negocio';
+  $homeSub   = ($home['subtitle'] ?? '') ?: 'Soluciones tecnológicas confiables, rápidas y a tu medida.';
+?>
+<section class="hero-fw section-wrap theme-hero-azur">
+  <?php if (!empty($slides)): ?>
+    <div id="heroCarousel"
+         class="hero-carousel carousel slide carousel-fade hero-pro"
+         data-bs-ride="carousel"
+         data-bs-interval="4500"
+         data-bs-pause="hover"
+         data-bs-wrap="true">
+
+      <div class="carousel-inner">
+        <?php $i=0; foreach ($slides as $sl): $i++;
+          $img = $sl['image_url'] ?? '';
+          if ($img && !is_absolute_url($img)) { $img = base_path() . '/' . ltrim($img, '/'); }
+          $bg  = e($img ?: '');
+        ?>
+        <div class="carousel-item <?= $i===1 ? 'active' : '' ?>">
+          <div class="hero-slide" style="position:relative;">
+            <div class="hero-bg" style="background-image:url('<?= $bg ?>');"></div>
+            <div class="overlay-mist"></div>
+            <div class="hero-center text-center px-3">
+              <h1 class="display-4 display-pro title mb-2"><?= e($homeTitle) ?></h1>
+              <p class="lead subtitle mb-0"><?= e($homeSub) ?></p>
+            </div>
+          </div>
+        </div>
+        <?php endforeach; ?>
+      </div>
+
+      <!-- Indicadores -->
+      <div class="carousel-indicators">
+        <?php for ($k=0; $k<count($slides); $k++): ?>
+          <button type="button" data-bs-target="#heroCarousel" data-bs-slide-to="<?= $k ?>" class="<?= $k===0?'active':'' ?>"></button>
+        <?php endfor; ?>
+      </div>
+
+      <!-- Controles -->
+      <button class="carousel-control-prev" type="button" data-bs-target="#heroCarousel" data-bs-slide="prev">
+        <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+        <span class="visually-hidden">Anterior</span>
+      </button>
+      <button class="carousel-control-next" type="button" data-bs-target="#heroCarousel" data-bs-slide="next">
+        <span class="carousel-control-next-icon" aria-hidden="true"></span>
+        <span class="visually-hidden">Siguiente</span>
+      </button>
+    </div>
+  <?php else: ?>
+    <div class="hero-carousel hero-pro d-flex align-items-center justify-content-center" style="height:560px;">
+      <div class="text-center px-3">
+        <h1 class="display-5 fw-semibold mb-2 title"><?= e($homeTitle) ?></h1>
+        <p class="lead subtitle mb-0"><?= e($homeSub) ?></p>
+      </div>
+    </div>
+  <?php endif; ?>
+</section>
+
+<!-- ============================================================================================ -->
+
+<!-- ============================ SECCIÓN “NOSOTROS / SOBRE JAMBO” ============================ -->
+<?php
+  global $pdo, $settings;
+
+  // Página 'sobre'
+  $sobre = ['title'=>'Sobre Jambo','content'=>'Somos un equipo que impulsa negocios con tecnología.'];
+  try {
+    $stmt = $pdo->prepare("SELECT title, content FROM pages WHERE slug = ? LIMIT 1");
+    $stmt->execute(['sobre']);
+    $tmp = $stmt->fetch();
+    if ($tmp) $sobre = $tmp;
+  } catch (Exception $e) {}
+
+  // Slides 'sobre'
+  $sobreSlides = [];
+  try {
+    $stmt = $pdo->prepare("SELECT image_url, title, caption FROM page_slides WHERE page_slug='sobre' ORDER BY position ASC, id ASC");
+    $stmt->execute();
+    $sobreSlides = $stmt->fetchAll();
+  } catch (Exception $e) {}
+
+  // Extracto para Home (~280 chars)
+  $texto = trim(strip_tags($sobre['content'] ?? ''));
+  if (mb_strlen($texto) > 280) {
+    $c = mb_strpos($texto.' ', ' ', 260);
+    if ($c === false) $c = 280;
+    $texto = mb_substr($texto, 0, $c) . '…';
+  }
+?>
+<section class="pad-72 section-surface theme-sobre-sage">
+  <div class="container">
+    <div class="row align-items-center g-4">
+
+      <!-- Carrusel “Nosotros”: tamaño fijo -->
+      <div class="col-lg-6 order-lg-2">
+        <?php if (!empty($sobreSlides)): ?>
+          <div id="sobreCarouselHome"
+               class="carousel slide carousel-fade"
+               data-bs-ride="carousel"
+               data-bs-interval="4000"
+               data-bs-pause="hover"
+               data-bs-wrap="true"
+               style="border-radius:.75rem; overflow:hidden;">
+            <div class="carousel-inner" style="height:380px;">
+              <?php $i=0; foreach ($sobreSlides as $sl): $i++;
+                $imgS = $sl['image_url'] ?? '';
+                if ($imgS && !is_absolute_url($imgS)) { $imgS = base_path() . '/' . ltrim($imgS, '/'); }
+                $imgS = e($imgS ?: '');
+              ?>
+                <div class="carousel-item <?= $i===1 ? 'active' : '' ?>" style="position:relative; height:100%;">
+                  <img src="<?= $imgS ?>" alt="<?= e($sl['title'] ?? 'Sobre Jambo') ?>"
+                       style="position:absolute; inset:0; width:100%; height:100%; object-fit:cover; object-position:center;">
+                </div>
+              <?php endforeach; ?>
+            </div>
+            <button class="carousel-control-prev" type="button" data-bs-target="#sobreCarouselHome" data-bs-slide="prev">
+              <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+              <span class="visually-hidden">Anterior</span>
+            </button>
+            <button class="carousel-control-next" type="button" data-bs-target="#sobreCarouselHome" data-bs-slide="next">
+              <span class="carousel-control-next-icon" aria-hidden="true"></span>
+              <span class="visually-hidden">Siguiente</span>
+            </button>
+          </div>
+        <?php else: ?>
+          <div class="ratio ratio-16x9 rounded shadow bg-light d-flex align-items-center justify-content-center muted">
+            Agrega slides en “Sobre Jambo”.
+          </div>
+        <?php endif; ?>
+      </div>
+
+      <!-- Texto -->
+      <div class="col-lg-6">
+        <span class="text-uppercase small fw-semibold muted" style="letter-spacing:.12rem;">Nosotros</span>
+        <h2 class="mt-2 title"><?= e($sobre['title'] ?? 'Sobre Jambo') ?></h2>
+        <p class="mt-2 subtitle"><?= nl2br(e($texto)) ?></p>
+
+        <?php include __DIR__ . '/partials/about_bullets.php'; ?>
+
+        <a href="<?= base_path() ?>/sobre-jambo" class="btn btn-accent mt-1">Conócenos</a>
+      </div>
+
+    </div>
+  </div>
+</section>
+
+<!-- ============================ SERVICIOS ============================ -->
+<section class="pad-72 section-plain theme-serv-indigo">
+  <div class="container">
+    <h2 class="mb-4 title">Nuestros servicios</h2>
+    <?php
+      // (Recomendado) en views/servicios_cards.php añade "services-card" a cada card para el look moderno.
+      // <div class="card h-100 shadow-sm card-service position-relative services-card">
+    ?>
+    <?php $services = $servicesHome ?? []; include __DIR__.'/servicios_cards.php'; ?>
+  </div>
+</section>
+
+<!-- ============================ CONTACTO ============================ -->
+<section id="contactanos" class="pad-72 section-surface theme-cta-lilac">
+  <div class="container" style="max-width:900px;">
+    <div class="row g-4">
+      <div class="col-12 text-center">
+        <h3 class="title mb-1">Contáctanos</h3>
+        <p class="subtitle mb-4">Envíanos un mensaje y te responderemos a la brevedad.</p>
+      </div>
+
+      <div class="col-12">
+        <form action="<?= base_path() ?>/contacto" method="post" class="row g-3">
+          <div class="col-md-6">
+            <label class="form-label">Nombre *</label>
+            <input class="form-control" name="first_name" required>
+          </div>
+          <div class="col-md-6">
+            <label class="form-label">Apellido *</label>
+            <input class="form-control" name="last_name" required>
+          </div>
+          <div class="col-md-6">
+            <label class="form-label">Email *</label>
+            <input type="email" class="form-control" name="email" required>
+          </div>
+          <div class="col-md-6">
+            <label class="form-label">Celular</label>
+            <input class="form-control" name="phone" placeholder="+51 9XX XXX XXX">
+          </div>
+          <div class="col-12">
+            <label class="form-label">Mensaje</label>
+            <textarea class="form-control" name="message" rows="5" placeholder="Cuéntanos qué necesitas"></textarea>
+          </div>
+          <div class="col-12 text-center">
+            <button class="btn btn-accent btn-lg px-4 rounded-3 shadow-sm">Enviar</button>
+          </div>
+        </form>
+      </div>
+    </div>
+  </div>
+</section>
+
+<?php require __DIR__.'/partials/footer.php'; ?>
+
+/* ===== NOSOTROS v2 — Sage Wave + Glass Card + KPIs ===== */
+
+/* Fondo con ondas y degradados visibles */
+.about-v2-wrap {
+    position: relative;
+    padding: 88px 0 72px;
+    background:
+      radial-gradient(900px 520px at 8% 10%, #eaf7f0 0%, rgba(234,247,240,0) 60%),
+      radial-gradient(700px 420px at 90% 0%, #e9f4ff 0%, rgba(233,244,255,0) 55%),
+      linear-gradient(180deg, #f4fbf6 0%, #ecf7ef 100%);
+  }
+  
+  /* Onda superior */
+  .about-v2-wrap .top-wave {
+    position: absolute; inset: -1px 0 auto 0; height: 80px; pointer-events: none;
+    background: linear-gradient(180deg, rgba(255,255,255,0), rgba(0,0,0,0));
+  }
+  .about-v2-wrap .top-wave svg {
+    display:block; width:100%; height:80px;
+  }
+  
+  /* Tarjeta glass para el texto */
+  .about-v2-card {
+    backdrop-filter: blur(10px);
+    -webkit-backdrop-filter: blur(10px);
+    background: rgba(255,255,255,.78);
+    border: 1px solid rgba(255,255,255,.6);
+    border-radius: 18px;
+    box-shadow: 0 18px 46px rgba(15,23,42,.12);
+    padding: 26px 28px;
+  }
+  
+  .about-v2-kicker {
+    text-transform: uppercase;
+    letter-spacing: .14rem;
+    font-size: .78rem;
+    font-weight: 800;
+    color: #119f6f;
+    margin-bottom: 6px;
+  }
+  .about-v2-title { font-weight: 900; color:#0f172a; letter-spacing:-.2px; margin-bottom: 10px; }
+  .about-v2-text  { color:#425466; line-height:1.65rem; }
+  
+  /* Bullets mejorados (si usas partial, solo estilos) */
+  .about-v2-card .bullet-pro {
+    display:flex; align-items:center; gap:10px; margin-bottom:10px;
+  }
+  .about-v2-card .bullet-pro .check {
+    width:22px; height:22px; border-radius:50%;
+    background:#e8faf2; border:1px solid #bde9d3; color:#0b7a3a;
+    display:flex; align-items:center; justify-content:center; font-weight:900; font-size:.75rem;
+  }
+  
+  /* CTA */
+  .about-v2-cta {
+    display:inline-flex; align-items:center; gap:8px;
+    background:#19a974; color:#fff; padding:10px 18px; border-radius:10px;
+    text-decoration:none; font-weight:800; transition:.18s ease; margin-top: 6px;
+  }
+  .about-v2-cta:hover { filter:brightness(.94); transform: translateY(-2px); }
+  
+  /* Carrusel premium */
+  .about-v2-carousel {
+    position: relative; border-radius: 20px; overflow: hidden; background:#fff;
+    box-shadow: 0 16px 46px rgba(0,0,0,.14);
+    border: 1px solid #e5e7eb;
+  }
+  .about-v2-carousel .img {
+    width:100%; height:400px; object-fit:cover; object-position:center;
+  }
+  .about-v2-carousel .overlay {
+    position:absolute; inset:0;
+    background: linear-gradient(180deg, rgba(0,0,0,.12), rgba(0,0,0,0) 40%, rgba(0,0,0,.18));
+    pointer-events:none;
+  }
+  
+  /* KPIs (banda) */
+  .kpi-band {
+    display:grid; grid-template-columns: repeat(3, 1fr); gap: 10px;
+    margin-top: 16px;
+  }
+  .kpi {
+    background:#ffffffcc; backdrop-filter: blur(4px);
+    border:1px solid #e5e7eb; border-radius:12px; padding:10px 12px;
+    display:flex; align-items:center; gap:10px;
+  }
+  .kpi .dot {
+    width:28px; height:28px; border-radius:10px; background:#ecf3ff; border:1px solid #d8e5ff;
+    display:flex; align-items:center; justify-content:center; color:#2a55ff; font-weight:900;
+  }
+  .kpi .num { font-weight:900; color:#0f172a; letter-spacing:.1px; }
+  .kpi .label { font-size:.82rem; color:#667085; line-height:1.1rem; }
+  
+  /* Responsivo */
+  @media (max-width: 991.98px){
+    .about-v2-wrap { padding: 64px 0 56px; }
+    .about-v2-carousel .img { height: 320px; }
+    .kpi-band { grid-template-columns: 1fr 1fr; }
+  }
+  @media (max-width: 575.98px){
+    .kpi-band { grid-template-columns: 1fr; }
+  }
+
+  /* ===== Separación entre secciones (PRO) ===== */
+.section-gap-lg { margin-top: 64px; margin-bottom: 0; }
+.section-gap-xl { margin-top: 84px; margin-bottom: 0; }
+
+/* Si quieres sombra suave al final del hero (opcional) */
+.hero-bottom-shadow {
+  position: relative;
+}
+.hero-bottom-shadow::after {
+  content: "";
+  position: absolute;
+  left: 0; right: 0; bottom: -18px;
+  height: 36px;
+  background: radial-gradient(100% 36px at 50% 0, rgba(0,0,0,.12), rgba(0,0,0,0) 70%);
+  pointer-events: none;
+}
+
+/* ===== Separador con onda (SVG) ===== */
+.section-separator {
+  position: relative;
+  height: 72px;
+  margin: 0;
+  overflow: hidden;
+}
+.section-separator svg {
+  display: block;
+  width: 100%;
+  height: 100%;
+}
+.section-separator .wave-fill {
+  fill: #ffffff; /* color de fondo de la siguiente sección */
+}
+
+/* En caso quieras un leve degradado debajo de la onda */
+.section-separator.gradient-underlay {
+  background: linear-gradient(180deg, rgba(0,0,0,0), rgba(15,23,42,.03));
+}
+
+/* ===== Header sticky glass ===== */
+.site-navbar{
+    position: sticky; /* si prefieres siempre visible aunque suba, usa fixed */
+    top: 0;
+    z-index: 1200; /* por encima del hero/onda */
+    background: rgba(255,255,255,.86);
+    backdrop-filter: blur(10px);
+    -webkit-backdrop-filter: blur(10px);
+    box-shadow: 0 6px 18px rgba(15,23,42,.06);
+  }
+  
+  /* Si usas position: fixed, descomenta este padding sobre <body> para que no tape el contenido */
+  /* body { padding-top: 64px; } */
+  
+  .site-navbar .navbar{
+    padding-top: .6rem;
+    padding-bottom: .6rem;
+  }
+  
+  .site-navbar .nav-link{
+    font-weight: 600;
+    color: #334155;
+  }
+  .site-navbar .nav-link:hover{
+    color: var(--brand-accent, #0A84FF);
+  }
+  
+  /* ===== Asegurar que el Hero/onda NO tapen el header ===== */
+  .hero-fw,
+  .section-separator,
+  .about-v2-wrap{
+    position: relative;
+    z-index: 1; /* debajo del header (1200) */
+  }
+  
+  /* algunos overlays del hero deben permitir clics al header */
+  .overlay-mist{ pointer-events: none; }
+  
+  /* La onda separadora va debajo del header */
+  .section-separator,
+  .section-separator *{
+    z-index: 1;
+  }
+  
+  /* Sombra suave bajo Hero (si la usas) no debe interferir */
+  .hero-bottom-shadow{ z-index: 1; }
+  
+  /* Opcional: si tu carrusel usa z-index alto, bájalo */
+  .hero-carousel, .hero-pro { z-index: 1; }
+  /* Header sticky glass */
+.site-navbar{
+    position: sticky; top: 0; z-index: 1200;
+    background: rgba(255,255,255,.86);
+    backdrop-filter: blur(10px); -webkit-backdrop-filter: blur(10px);
+    box-shadow: 0 6px 18px rgba(15,23,42,.06);
+  }
+  .site-navbar .navbar{ padding-top: .6rem; padding-bottom: .6rem; }
+  
+  /* Marca */
+  .brand-logo{
+    max-height: 36px; /* ajusta a 40–48 si lo quieres un poco más grande */
+    width: auto; display: block;
+    object-fit: contain;
+  }
+  .brand-name{
+    color:#0f172a; letter-spacing:.2px;
+  }
+  
+  /* Links */
+  .site-navbar .nav-link{ font-weight:600; color:#334155; }
+  .site-navbar .nav-link:hover{ color: var(--brand-accent, #0A84FF); }
+  
+  /* Evitar que overlays del hero tapen el header */
+  .hero-fw, .section-separator, .about-v2-wrap { position: relative; z-index: 1; }
+  .overlay-mist{ pointer-events: none; } /* overlay del hero no intercepta clics al menú */
+  /* Header sticky glass */
+.site-navbar{
+    position: sticky; top: 0; z-index: 1200;
+    background: rgba(255,255,255,.86);
+    backdrop-filter: blur(10px); -webkit-backdrop-filter: blur(10px);
+    box-shadow: 0 6px 18px rgba(15,23,42,.06);
+  }
+  .site-navbar .navbar{ padding-top: .6rem; padding-bottom: .6rem; }
+  
+  /* Marca */
+  .brand-logo{
+    max-height: 36px; /* ajusta a 40–48 si lo necesitas */
+    width: auto; display: block; object-fit: contain; margin-right: 8px;
+  }
+  .brand-name{ color:#0f172a; letter-spacing:.2px; }
+  
+  /* Links */
+  .site-navbar .nav-link{ font-weight:600; color:#334155; }
+  .site-navbar .nav-link:hover{ color: var(--brand-accent, #0A84FF); }
+  
+  /* Evitar que overlays del hero tapen el header */
+  .hero-fw, .section-separator, .about-v2-wrap { position: relative; z-index: 1; }
+  .overlay-mist{ pointer-events: none; }
+
+  /* ========================== SERVICIO DETALLE (PRO) ========================== */
+
+/* Hero sutil */
+.svc-hero{
+    padding: 40px 0 28px;
+    background:
+      radial-gradient(900px 520px at 0% 0%, #eef5ff 0%, rgba(238,245,255,0) 55%),
+      radial-gradient(700px 420px at 90% -10%, #e8fff4 0%, rgba(232,255,244,0) 55%),
+      linear-gradient(180deg, #f8fbff 0%, #f4f8ff 100%);
+    border-bottom: 1px solid #e9eef6;
+  }
+  .svc-breadcrumb .breadcrumb{
+    margin-bottom: .25rem;
+    --bs-breadcrumb-divider: '›';
+  }
+  .svc-breadcrumb .breadcrumb .breadcrumb-item a{
+    text-decoration: none;
+    color: #334155;
+  }
+  .svc-breadcrumb .breadcrumb .breadcrumb-item a:hover{
+    color: var(--brand-accent, #0A84FF);
+  }
+  .svc-title{ color:#0f172a; font-weight: 900; letter-spacing: -.2px; }
+  .svc-subtitle{ color:#475569; }
+  
+  /* Portada */
+  .svc-cover{
+    border: 1px solid #e9edf3;
+    border-radius: 14px;
+    overflow: hidden;
+    margin-bottom: 18px;
+  }
+  .svc-cover img{
+    width: 100%; height: auto; display: block;
+    object-fit: cover; object-position: center;
+  }
+  
+  /* Tipografía de contenido (prose) */
+  .prose{
+    border: 1px solid #e9edf3;
+    border-radius: 14px;
+  }
+  .prose .card-body{
+    color:#1f2937; font-size: 1rem; line-height: 1.75rem;
+  }
+  .prose .card-body p{ margin-bottom: 1rem; }
+  .prose .card-body ul{ margin-bottom: 1rem; padding-left: 1.25rem; }
+  .prose .card-body li{ margin-bottom: .35rem; }
+  .prose .card-body h1,.prose .card-body h2,.prose .card-body h3{
+    margin-top: 1.25rem; margin-bottom: .75rem; font-weight: 800; color:#0f172a;
+  }
+  
+  /* Sidebar sticky */
+  .sticky-card{
+    position: sticky; top: 88px;
+    border: 1px solid #e9edf3; border-radius: 14px;
+  }
+  .badge-soft{
+    display:inline-flex; align-items:center; justify-content:center;
+    min-width: 22px; height: 22px; border-radius: 50%;
+    font-weight: 800; font-size: .75rem; background:#eef4ff !important;
+    border: 1px solid #dbe6ff;
+  }
+  
+  /* CTA acento coherente con el tema */
+  .btn-accent{
+    background: var(--brand-accent, #0A84FF);
+    border-color: var(--brand-accent, #0A84FF);
+    color:#fff; font-weight: 700;
+  }
+  .btn-accent:hover{ filter: brightness(.95); }
+
+  /* ============================================================
+   HERO TITLE PRO — Súper legible en cualquier imagen
+   ============================================================ */
+.hero-center h1.hero-title-pro {
+    font-size: 3rem;
+    font-weight: 900;
+    color: #ffffff;
+    text-shadow: 
+        0 3px 8px rgba(0,0,0,0.60),
+        0 0 32px rgba(0,0,0,0.40);
+    letter-spacing: -1px;
+  }
+  
+  .hero-center p.hero-subtitle-pro {
+    font-size: 1.25rem;
+    font-weight: 500;
+    color: #f1f5f9;
+    text-shadow: 
+        0 2px 6px rgba(0,0,0,0.60);
+  }
+  
+  /* Overlay mejorado */
+  .hero-slide .overlay-boost {
+    position: absolute;
+    inset: 0;
+    background: linear-gradient(
+        rgba(0,0,0,0.45),
+        rgba(0,0,0,0.35)
+    );
+    pointer-events: none;
+  }
+  
+  /* Opcional: Glow Neon PRO (para estilos más agresivos) */
+  .hero-title-glow {
+    color: #fff;
+    text-shadow: 
+        0 0 10px rgba(0,162,255,.8),
+        0 0 20px rgba(0,162,255,.7),
+        0 0 40px rgba(0,162,255,.5);
+  }
+  /* ============================================================
+   HERO ULTRA PRO — GLASS + GLOW + CINE + STROKE + BLOCK
+   ============================================================ */
+
+/* Overlay potente */
+.overlay-boost {
+    position: absolute;
+    inset: 0;
+    background: linear-gradient(
+        rgba(0,0,0,0.63),
+        rgba(0,0,0,0.45) 40%,
+        rgba(0,0,0,0.75)
+    );
+    backdrop-filter: blur(2px);
+    pointer-events: none;
+  }
+  
+  /* BLOQUE DEGRADADO */
+  .hero-block-wrap {
+    display: inline-block;
+    padding: 16px 36px;
+    border-radius: 20px;
+    background: linear-gradient(135deg, rgba(0,122,255,0.85), rgba(0,200,255,0.65));
+    box-shadow: 
+        0 10px 30px rgba(0,0,0,0.55),
+        0 0 45px rgba(0,170,255,0.55);
+    backdrop-filter: blur(8px);
+  }
+  
+  /* TÍTULO: GLASS + GLOW + CINE + STROKE */
+  .hero-title-ultra {
+    font-size: 3.8rem;
+    font-weight: 900;
+    color: #ffffff;
+    letter-spacing: -2px;
+    -webkit-text-stroke: 2px rgba(0,0,0,0.85);
+    text-shadow:
+        0 0 18px rgba(0,195,255,0.85),
+        0 0 40px rgba(0,150,255,0.65),
+        0 8px 32px rgba(0,0,0,0.85),
+        0 15px 60px rgba(0,0,0,0.45);
+  }
+  
+  /* SUBTÍTULO: Glow suave + Stroke ligero + vidrio */
+  .hero-sub-ultra {
+    font-size: 1.45rem;
+    color: #e8faff;
+    font-weight: 600;
+    margin-top: 10px;
+    -webkit-text-stroke: 1px rgba(0,0,0,0.75);
+    text-shadow:
+        0 0 14px rgba(0,160,255,0.75),
+        0 4px 14px rgba(0,0,0,0.75);
+    padding: 8px 20px;
+    border-radius: 14px;
+    background: rgba(0,0,0,0.35);
+    backdrop-filter: blur(6px);
+  }
+  /* =========================== HERO — Mejora de legibilidad y posición =========================== */
+
+/* Contenedor del texto: lo bajamos un poco dentro del hero */
+.hero-center {
+    position: absolute;
+    left: 50%;
+    top: 28%;               /* <-- antes estaba más arriba; ajusta 56–62% a gusto */
+    transform: translate(-50%, -50%);
+    width: min(92vw, 1000px);
+    pointer-events: none;   /* evita captar clicks sobre el texto en el carrusel */
+  }
+  
+  /* Título con "sombra de borde" sutil: stroke ligero + múltiples sombras suaves */
+  .hero-title-soft{
+    font-size: clamp(2.1rem, 4.5vw, 3.1rem);
+    font-weight: 900;
+    letter-spacing: -0.5px;
+    line-height: 1.08;
+  
+    /* color principal en blanco */
+    color: #ffffff;
+  
+    /* borde muy fino para fondos muy claros (solo WebKit) */
+    -webkit-text-stroke: 1px rgba(0,0,0,0.35);
+  
+    /* sombras en capas: combinan para recortar en fondos claros/oscros sin verse pesado */
+    text-shadow:
+      0 0 2px rgba(0,0,0,0.35),
+      0 2px 6px rgba(0,0,0,0.45),
+      0 6px 18px rgba(0,0,0,0.35);
+  }
+  
+  /* Subtítulo con borde más sutil aún, evitando look "marco" */
+  .hero-subtitle-soft{
+    font-size: clamp(1rem, 2.2vw, 1.15rem);
+    font-weight: 600;
+    color: #f8fafc;
+    -webkit-text-stroke: 0.6px rgba(0,0,0,0.25);
+    text-shadow:
+      0 0 2px rgba(0,0,0,0.28),
+      0 2px 10px rgba(0,0,0,0.28);
+  }
+  
+  /* Overlay muy sutil (ya lo usabas); le subimos apenas el contraste sin “bloques” */
+  .overlay-soft {
+    position: absolute;
+    inset: 0;
+    background:
+      radial-gradient(58% 38% at 50% 58%, rgba(0,0,0,0.24) 0%, rgba(0,0,0,0.10) 55%, rgba(0,0,0,0.04) 100%),
+      linear-gradient(to bottom, rgba(0,0,0,0.18), rgba(0,0,0,0.10) 40%, rgba(0,0,0,0.22));
+    pointer-events: none;
+  }
+  
+  /* Responsive fino: baja un poco más el bloque en pantallas pequeñas */
+  @media (max-width: 768px){
+    .hero-center { top: 60%; }
+  }
+  
+  /* Si tu carrusel tiene controles superpuestos, asegúrate de que el texto quede por encima */
+  .hero-center { z-index: 2; }
+
+  /* ============================= SOBRE JAMBO — UI Moderna ============================= */
+
+/* HERO sutil */
+.about-hero {
+    padding: 52px 0 32px;
+    background:
+      radial-gradient(900px 520px at 14% 0%, rgba(233,246,255,.7) 0%, rgba(233,246,255,0) 60%),
+      radial-gradient(700px 420px at 100% 0%, rgba(232,255,244,.6) 0%, rgba(232,255,244,0) 55%),
+      linear-gradient(180deg, #f8fbff 0%, #f4f8ff 100%);
+    border-bottom: 1px solid #e8edf4;
+  }
+  .about-hero-title{
+    font-weight: 900; letter-spacing: -.2px; color:#0f172a; margin: 0 0 .25rem;
+    font-size: clamp(1.9rem, 3.8vw, 2.4rem);
+  }
+  .about-hero-sub{
+    color:#5b6574; margin: 0;
+    font-size: clamp(1rem, 2vw, 1.1rem);
+  }
+  .about-hero-carousel { border-radius: 16px; overflow: hidden; box-shadow: 0 12px 28px rgba(0,0,0,.10); }
+  .about-hero-img { width:100%; height: 240px; object-fit: cover; object-position: center; }
+  @media (min-width: 992px){ .about-hero-img { height: 280px; } }
+  
+  /* CARD principal */
+  .about-card{ border:1px solid #e9edf3; border-radius:16px; background:#fff; }
+  .about-card-body{
+    padding: 22px 24px;
+    color:#1f2937; font-size:1rem; line-height:1.75rem;
+  }
+  
+  /* Bullets */
+  .about-bullet{ display:flex; align-items:flex-start; gap:10px; margin-bottom: 10px; color:#425466; }
+  .about-bullet .check{
+    display:flex; align-items:center; justify-content:center;
+    width:22px; height:22px; border-radius:50%;
+    background:#e8faf2; border:1px solid #bde9d3; color:#0b7a3a; font-weight:900; font-size:.78rem;
+  }
+  
+  /* KPIs */
+  .about-stat{
+    border:1px solid #e9edf3; border-radius:14px; background:#fff; padding:16px 14px; text-align:center;
+    box-shadow: 0 10px 22px rgba(0,0,0,.06);
+  }
+  .about-stat .num{ font-size:1.6rem; font-weight:900; color:#0f172a; line-height:1; }
+  .about-stat .label{ color:#6b7280; font-weight:600; font-size:.9rem; margin-top:4px; }
+  
+  /* Botón CTA lateral */
+  .about-body a.btn-accent, .about-cta a.btn-accent{
+    display:inline-flex; align-items:center; justify-content:center; gap:8px;
+    padding:12px 18px; border-radius:12px; border:1px solid var(--brand-accent, #0A84FF);
+    background: var(--brand-accent, #0A84FF); color:#fff; font-weight:800; text-decoration:none;
+    transition: .18s ease;
+  }
+  .about-body a.btn-accent:hover, .about-cta a.btn-accent:hover{ filter: brightness(.95); transform: translateY(-1px); }
+  
+  /* Timeline */
+  .about-timeline{ background:#fff; }
+  .about-sec-title{ font-weight:900; color:#0f172a; letter-spacing:-.2px; }
+  .timeline{
+    position:relative; padding-left: 24px; margin-top: 8px;
+    border-left: 2px solid #e4e7ec;
+  }
+  .t-item{ position:relative; padding: 10px 0 10px 14px; }
+  .t-dot{
+    position:absolute; left:-9px; top: 16px; width: 14px; height:14px; border-radius:50%;
+    background:#fff; border:2px solid var(--brand-accent, #0A84FF);
+  }
+  .t-year{ font-weight:800; color:#111827; }
+  .t-text{ color:#515b6a; }
+  
+  /* CTA final */
+  .about-cta{
+    background:
+      linear-gradient(180deg, #f7fbff 0%, #f2f7ff 100%);
+    border-top: 1px solid #e8edf4;
+  }
+  .about-cta h3{ font-weight:900; color:#0f172a; }
+  .about-cta p{ color:#6b7280; }
+  
+  /* Animaciones sutiles (aos-like) */
+  .aos-fade { opacity: 0; transform: translateY(8px); transition: all .5s ease; }
+  .aos-fade.aos-in { opacity: 1; transform: none; }
+  .aos-slide { opacity: 0; transform: translateX(-8px); transition: all .5s ease; }
+  .aos-slide.aos-in { opacity: 1; transform: none; }
+
+  /* =================== SOBRE JAMBO — DISEÑO PRO =================== */
+
+.sobre-hero{
+    padding: 70px 0 40px;
+    background: linear-gradient(180deg,#f7fafc,#eef2f7);
+  }
+  .sobre-hero-title{
+    font-size: clamp(2rem,4vw,2.6rem);
+    font-weight: 900;
+    color:#0f172a;
+  }
+  .sobre-hero-sub{
+    font-size: clamp(1rem,2vw,1.15rem);
+    color:#475569;
+  }
+  
+  /* Galería */
+  .sobre-gallery{ padding: 20px 0; }
+  .sobre-carousel{ border-radius:14px; overflow:hidden; box-shadow:0 10px 26px rgba(0,0,0,.08); }
+  .sobre-img{
+    width:100%;
+    height:300px;
+    object-fit:cover;
+    object-position:center;
+  }
+  @media(min-width:992px){ .sobre-img{ height:360px; } }
+  
+  /* Card principal */
+  .sobre-card{
+    border:1px solid #e5e7eb;
+    border-radius:16px;
+    background:#fff;
+  }
+  .sobre-card-body{
+    padding:24px;
+    color:#1e293b;
+    font-size:1rem;
+    line-height:1.7rem;
+  }
+  
+  /* Bullets */
+  .sobre-bullets{ list-style:none; padding:0; margin:0; }
+  .sobre-bullets li{
+    display:flex; gap:10px; align-items:flex-start;
+    margin-bottom:10px; color:#475569; font-size:1rem;
+  }
+  .sobre-bullets .check{
+    width:22px; height:22px; border-radius:50%;
+    background:#e8faf2; border:1px solid #bde9d3;
+    display:flex; align-items:center; justify-content:center;
+    color:#0b7a3a; font-weight:900;
+  }
+  
+  /* Stats (KPIs) */
+  .sobre-stat{
+    text-align:center;
+    padding:20px 10px;
+    border:1px solid #e5e7eb;
+    border-radius:14px;
+    background:#fff;
+    box-shadow:0 8px 20px rgba(0,0,0,.06);
+  }
+  .sobre-stat .num{
+    font-weight:900;
+    font-size:1.7rem;
+    color:#0f172a;
+  }
+  .sobre-stat .label{
+    margin-top:4px;
+    color:#64748b;
+    font-weight:600;
+  }
+  
+  /* Timeline */
+  .sobre-sec-title{
+    font-weight:900;
+    color:#0f172a;
+  }
+  .timeline{
+    border-left:2px solid #d1d5db;
+    padding-left:25px;
+    position:relative;
+  }
+  .t-item{
+    margin-bottom:20px;
+    position:relative;
+  }
+  .t-dot{
+    position:absolute;
+    left:-9px; top:6px;
+    width:14px; height:14px;
+    border-radius:50%;
+    background:#fff;
+    border:2px solid var(--brand-accent,#0A84FF);
+  }
+  .t-year{
+    font-weight:800;
+    color:#0f172a;
+  }
+  .t-text{
+    color:#475569;
+  }
+  
+  /* CTA */
+  .sobre-cta{
+    background:#f8fbff;
+    border-top:1px solid #e5e7eb;
+  }
+  .sobre-cta h3{
+    font-weight:900;
+  }
+
+  /* ===================== CONTROL VISUAL DE IMÁGENES (NOSOTROS) ===================== */
+
+/* 1) Galería (carousel) — altura moderada y uniforme */
+.sobre-carousel .sobre-img,
+.about-hero-carousel .about-hero-img {
+  width: 100%;
+  height: clamp(220px, 42vw, 380px);   /* móvil → desktop */
+  object-fit: cover;                    /* rellena sin deformar */
+  object-position: center;              /* centra el recorte */
+  display: block;
+}
+
+/* 2) Imágenes sueltas dentro del contenido (párrafos/WYSIWYG) */
+.sobre-card-body img,
+.about-v2-card img,
+.about-card img {
+  max-width: 100%;
+  width: 100%;
+  height: auto;               /* por defecto, respeta proporción */
+  display: block;
+  border-radius: 12px;
+  box-shadow: 0 10px 24px rgba(0,0,0,.06);
+  margin: 12px 0;
+}
+
+/* 2.1) Si una imagen vertical rompe el flujo, la contenemos en un marco fijo */
+.sobre-card-body .img-frame,
+.about-v2-card .img-frame {
+  width: 100%;
+  height: clamp(220px, 50vw, 420px);    /* límite visual */
+  border-radius: 12px;
+  overflow: hidden;
+  box-shadow: 0 10px 24px rgba(0,0,0,.06);
+  background: #f3f6fb;
+}
+.sobre-card-body .img-frame > img,
+.about-v2-card .img-frame > img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;          /* recorte elegante para verticales */
+  object-position: center;
+}
+
+/* 3) Imágenes alineadas a textos (si las usas dentro de columnas) */
+.sobre-card-body .img-contain {
+  width: 100%;
+  height: clamp(180px, 38vw, 320px);
+  object-fit: contain;        /* cuando quieras mostrar completa con bandas */
+  background: #f8fafc;
+  border: 1px solid #e9edf3;
+  border-radius: 12px;
+  padding: 8px;
+}
+
+/* 4) Pequeñas utilidades (por si las necesitas) */
+.img-16x9 { aspect-ratio: 16 / 9; object-fit: cover; }
+.img-4x3  { aspect-ratio: 4 / 3;  object-fit: cover; }
+.img-1x1  { aspect-ratio: 1 / 1;  object-fit: cover; }
+
+/* 5) Ajustes responsive finos */
+@media (min-width: 992px){
+  .sobre-carousel .sobre-img,
+  .about-hero-carousel .about-hero-img {
+    height: clamp(300px, 36vw, 420px);
+  }
+}
+/* ===================== NUESTRA EXPERIENCIA (card bajo KPI) ===================== */
+.exp-card{
+    border:1px solid #e9edf3;
+    border-radius:16px;
+    background:#fff;
+    box-shadow: 0 10px 24px rgba(0,0,0,.06);
+    padding:18px 16px;
+  }
+  .exp-title{
+    font-size:1.15rem;
+    font-weight:900;
+    color:#0f172a;
+    margin: 0 0 8px 0;
+  }
+  
+  /* Timeline compacta dentro del card */
+  .exp-timeline{
+    position: relative;
+    border-left: 2px solid #e5e7eb;
+    padding-left: 16px;
+  }
+  .exp-item{
+    position: relative;
+    padding: 8px 0 10px 0;
+  }
+  .exp-dot{
+    position:absolute;
+    left: -8px;          /* centrado sobre la línea */
+    top: 12px;
+    width: 12px;
+    height: 12px;
+    border-radius: 50%;
+    background:#fff;
+    border: 2px solid var(--brand-accent, #0A84FF);
+  }
+  .exp-year{
+    font-weight: 800;
+    color:#0f172a;
+    margin-bottom: 2px;
+  }
+  .exp-text{
+    color:#536079;
+    font-size: .95rem;
+    line-height: 1.45rem;
+  }
+  
+  /* Ajuste responsive (card y línea con respiración) */
+  @media (max-width: 991.98px){
+    .exp-card{ margin-top: 10px; }
+  }
+
+  /* Espaciado fino debajo de KPI */
+.exp-card { margin-top: 12px; }
+
+/* Título timeline un poco más fuerte */
+.exp-title { letter-spacing: -.2px; }
+
+/* Si deseas ocultar por completo un viejo bloque “Nuestra evolución” en caso de quedar en caché:
+.about-timeline, .sobre-sec-title { display: none !important; } */
+
+/* ====== SOBRE JAMBO — Ajustes de orden/espacios y tamaños moderados ====== */
+
+/* Hero */
+.sobre-hero{ padding: 62px 0 30px; background: linear-gradient(180deg,#f7fafc,#eef2f7); }
+.sobre-hero-title{ font-weight: 900; letter-spacing:-.2px; color:#0f172a; font-size: clamp(2rem,3.6vw,2.5rem); margin:0 0 .25rem; }
+.sobre-hero-sub{ color:#556072; font-size: clamp(1rem,2vw,1.12rem); margin:0; }
+
+/* Galería: altura moderada responsive */
+.sobre-carousel{ border-radius:16px; overflow:hidden; box-shadow:0 10px 26px rgba(0,0,0,.08); }
+.sobre-img{
+  width:100%;
+  height: clamp(240px, 42vw, 380px);
+  object-fit: cover;
+  object-position: center;
+  display:block;
+}
+
+/* Card principal (contenido) */
+.sobre-card{ border:1px solid #e7ebf2; border-radius:16px; background:#fff; }
+.sobre-card-body{ padding: 22px 24px; color:#1f2937; line-height:1.7rem; }
+
+/* Bullets */
+.sobre-bullets{ list-style:none; padding:0; margin:0; }
+.sobre-bullets li{ display:flex; gap:10px; align-items:flex-start; margin-bottom:10px; color:#4b5563; }
+.sobre-bullets .check{
+  width:22px; height:22px; border-radius:50%;
+  background:#e8faf2; border:1px solid #bde9d3; color:#0b7a3a;
+  display:flex; align-items:center; justify-content:center; font-weight:900; font-size:.8rem;
+}
+
+/* KPI */
+.sobre-stat{
+  text-align:center; background:#fff; border:1px solid #e7ebf2; border-radius:14px; padding:16px 10px;
+  box-shadow:0 8px 20px rgba(0,0,0,.06);
+}
+.sobre-stat .num{ font-weight:900; font-size:1.6rem; color:#0f172a; line-height:1; }
+.sobre-stat .label{ color:#6b7280; font-weight:600; font-size:.92rem; margin-top:4px; }
+
+/* Card “Nuestra experiencia” */
+.exp-card{
+  border:1px solid #e7ebf2; border-radius:16px; background:#fff;
+  padding:18px 16px; box-shadow:0 10px 24px rgba(0,0,0,.06);
+}
+.exp-title{ font-size:1.1rem; font-weight:900; color:#0f172a; margin:0 0 8px; letter-spacing:-.2px; }
+.exp-timeline{ position:relative; border-left:2px solid #e5e7eb; padding-left:16px; }
+.exp-item{ position:relative; padding:8px 0 10px; }
+.exp-dot{
+  position:absolute; left:-8px; top:12px; width:12px; height:12px; border-radius:50%;
+  background:#fff; border:2px solid var(--brand-accent, #0A84FF);
+}
+.exp-year{ font-weight:800; color:#0f172a; margin-bottom:2px; }
+.exp-text{ color:#536079; font-size:.95rem; line-height:1.45rem; }
+
+/* CTA */
+.sobre-cta{ background:#f8fbff; border-top:1px solid #e7ebf2; }
+.btn-accent{ background: var(--brand-accent, #0A84FF); border:1px solid var(--brand-accent, #0A84FF); color:#fff; font-weight:800; padding:12px 18px; border-radius:12px; text-decoration:none; }
+.btn-accent:hover{ filter:brightness(.95); transform: translateY(-1px); }
+
+/* Resp. finos */
+@media (min-width: 992px){
+  .sobre-img{ height: clamp(300px, 36vw, 420px); }
+}
+
+/* ===================== SOBRE - HERO ELEGANTE ===================== */
+
+.sobre-hero {
+    padding: 90px 0 60px;
+    text-align: center;
+    position: relative;
+    background:
+      radial-gradient(circle at 50% 0%, rgba(0,0,0,0.05), transparent 70%),
+      linear-gradient(180deg, #f7f9fc 0%, #eef2f7 100%);
+  }
+  
+  /* Línea decorativa superior */
+  .sobre-hero::before {
+    content: "";
+    position: absolute;
+    top: 0;
+    left: 0;
+    height: 6px;
+    width: 100%;
+    background: linear-gradient(90deg, var(--brand-accent,#0A84FF), #4ac7ff, var(--brand-accent,#0A84FF));
+    opacity: 0.35;
+  }
+  
+  /* TITULO */
+  .sobre-hero-title {
+    font-size: clamp(2.2rem, 4.2vw, 3rem);
+    font-weight: 900;
+    color: #0f172a;
+    letter-spacing: -1px;
+    margin-bottom: 10px;
+    text-shadow: 0 2px 4px rgba(0,0,0,0.08);
+    position: relative;
+    display: inline-block;
+  }
+  
+  /* Subrayado moderno */
+  .sobre-hero-title::after {
+    content: "";
+    display: block;
+    width: 68px;
+    height: 4px;
+    background: var(--brand-accent,#0A84FF);
+    border-radius: 3px;
+    margin: 10px auto 0;
+  }
+  
+  /* SUBTÍTULO */
+  .sobre-hero-sub {
+    font-size: clamp(1.05rem, 2vw, 1.25rem);
+    color: #475569;
+    margin-top: 12px;
+    text-shadow: 0 1px 2px rgba(0,0,0,0.08);
+  }
+  
+  /* Decoración opcional: pequeña esfera azul detrás (súper sutil) */
+  .sobre-hero::after {
+    content:"";
+    position: absolute;
+    width: 180px;
+    height: 180px;
+    background: radial-gradient(circle, rgba(0,150,255,0.16), transparent 75%);
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -20%);
+    z-index: -1;
+    filter: blur(8px);
+  }
+
+  /* ==========================================================
+   HERO MINIMALISTA - SERVICIOS
+   ========================================================== */
+
+.services-hero{
+    padding: 80px 0 50px;
+    background:
+      radial-gradient(circle at 50% 0%, rgba(0,0,0,0.05), transparent 70%),
+      linear-gradient(180deg, #f8fafc 0%, #eef1f6 100%);
+    position: relative;
+    overflow: hidden;
+  }
+  
+  /* Título elegante */
+  .services-title{
+    font-size: clamp(2.2rem, 4vw, 2.8rem);
+    font-weight: 900;
+    color: #0f172a;
+    letter-spacing: -0.5px;
+    margin-bottom: 10px;
+    text-shadow: 0 2px 4px rgba(0,0,0,0.06);
+  }
+  
+  /* Subtítulo minimal */
+  .services-sub{
+    font-size: clamp(1rem, 2vw, 1.2rem);
+    color: #475569;
+    max-width: 620px;
+    margin: 0 auto;
+    opacity: 0.9;
+  }
+  
+  /* Línea minimalista */
+  .services-divider{
+    width: 70px;
+    height: 3px;
+    background: var(--brand-accent, #0A84FF);
+    border-radius: 2px;
+    margin: 18px auto 0;
+    opacity: 0.45;
+  }
+  
+  /* Onda ultra sutil */
+  .services-wave{
+    width: 100%;
+    height: 60px;
+    background: url('data:image/svg+xml;utf8,<svg viewBox="0 0 1440 320" xmlns="http://www.w3.org/2000/svg"><path fill="%23f8fafc" fill-opacity="1" d="M0,224L48,224C96,224,192,224,288,197.3C384,171,480,117,576,90.7C672,64,768,64,864,96C960,128,1056,192,1152,197.3C1248,203,1344,149,1392,122.7L1440,96V320H0Z"></path></svg>');
+    background-size: cover;
+    background-position: bottom;
+    opacity: .35;
+  }
+  
+  /* Animación suave */
+  .services-title, .services-sub, .services-divider{
+    opacity: 0;
+    transform: translateY(10px);
+    animation: riseFade .7s ease forwards;
+  }
+  .services-sub{ animation-delay: .15s; }
+  .services-divider{ animation-delay: .25s; }
+  
+  @keyframes riseFade{
+    to{
+      opacity:1;
+      transform: translateY(0);
+    }
+  }
+  /* =========================================================
+   HEADER SÓLIDO • Profesional y sobrio (azul petróleo)
+   Combina con la paleta actual (azules + grises)
+   ========================================================= */
+:root{
+    /* Puedes ajustar estos tonos a tu marca */
+    --header-bg: #0E2A36;          /* azul petróleo serio */
+    --header-bg-strong: #0B222B;   /* tono más oscuro (hover) */
+    --header-text: #E6EEF4;        /* texto claro */
+    --header-muted: #B6C5CF;       /* links en reposo */
+    --header-accent: #0A84FF;      /* acento ya usado en el sitio */
+    --header-border: rgba(255,255,255,0.10);
+  }
+  
+  /* Layout del header */
+  .site-header.header-solid{
+    position: sticky;      /* <- pon 'static' si no quieres sticky */
+    top: 0;
+    z-index: 1030;
+    background: var(--header-bg);
+    color: var(--header-text);
+    border-bottom: 1px solid var(--header-border);
+    box-shadow: 0 6px 16px rgba(0,0,0,.08);
+  }
+  
+  .container-header{
+    max-width: 1200px;     /* hazlo coincidir con el contenedor del resto del sitio */
+    margin: 0 auto;
+    padding: 12px 16px;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    gap: 12px;
+  }
+  
+  /* Marca / Logo */
+  .brand-link{
+    display: inline-flex;
+    align-items: center;
+    gap: 10px;
+    text-decoration: none;
+    color: inherit;
+  }
+  .brand-name{
+    font-weight: 900;
+    letter-spacing: .4px;
+    color: var(--header-text);
+  }
+  
+  /* Navegación */
+  .main-nav{
+    display: flex;
+    gap: 20px;
+  }
+  .main-nav .nav-link{
+    color: var(--header-muted);
+    text-decoration: none;
+    font-weight: 700;
+    padding: 8px 6px;
+    border-radius: 8px;
+    transition: color .15s ease, background .15s ease;
+  }
+  .main-nav .nav-link:hover{
+    color: var(--header-text);
+    background: rgba(255,255,255,.06);
+  }
+  
+  /* Estado 'activo' (si luego quieres aplicar por ruta) */
+  .main-nav .nav-link.active{
+    color: #fff;
+    background: rgba(10,132,255,.18);
+    box-shadow: inset 0 0 0 1px rgba(10,132,255,.25);
+  }
+  
+  /* Responsivo */
+  @media (max-width: 991.98px){
+    .container-header{ padding: 10px 14px; }
+    .main-nav{ gap: 14px; }
+    .brand-name{ font-size: 1.05rem; }
+  }
+  
+  /* =========================================================
+     OPCIONAL — Variante grafito (más sobria aún)
+     Descomenta si prefieres gris oscuro en vez de azul petróleo
+     ========================================================= */
+  /*
+  :root{
+    --header-bg: #111826;
+    --header-bg-strong: #0B1320;
+    --header-text: #EEF2F6;
+    --header-muted: #BAC6D2;
+    --header-accent: #0A84FF;
+    --header-border: rgba(255,255,255,0.08);
+  }
+  */
+  /* =========================================================
+   JAMBO • HEADER SÓLIDO (profesional, sobrio, combinando con azules/grises)
+   Namespace: jh-*
+   ========================================================= */
+:root{
+    --jh-bg:          #0E2A36;  /* Azul petróleo serio */
+    --jh-bg-strong:   #0B222B;  /* Hover/scroll */
+    --jh-text:        #E6EEF4;  /* Texto principal */
+    --jh-muted:       #B6C5CF;  /* Links reposo */
+    --jh-accent:      #0A84FF;  /* Acento del sitio */
+    --jh-border:      rgba(255,255,255,.10);
+  }
+  
+  .jh-header{
+    position: sticky; top: 0; z-index: 1030;
+    background: var(--jh-bg);
+    border-bottom: 1px solid var(--jh-border);
+    box-shadow: 0 6px 16px rgba(0,0,0,.08);
+  }
+  
+  /* Contenedor */
+  .jh-wrap{
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 12px 16px;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    gap: 12px;
+  }
+  
+  /* Marca */
+  .jh-brand{
+    display: inline-flex;
+    align-items: center;
+    gap: 10px;
+    text-decoration: none;
+    color: var(--jh-text);
+  }
+  .jh-brand__name{
+    font-weight: 900;
+    letter-spacing: .4px;
+    color: var(--jh-text);
+  }
+  
+  /* Nav: HORIZONTAL SIEMPRE */
+  .jh-nav{
+    display: flex;
+    align-items: center;
+    gap: 20px;               /* <- controla separación */
+  }
+  .jh-nav__link{
+    color: var(--jh-muted);
+    text-decoration: none;
+    font-weight: 700;
+    padding: 8px 10px;
+    border-radius: 8px;
+    transition: color .15s ease, background .15s ease, box-shadow .15s ease;
+    display: inline-flex;    /* evita “salto” vertical */
+    align-items: center;
+  }
+  .jh-nav__link:hover{
+    color: var(--jh-text);
+    background: rgba(255,255,255,.06);
+  }
+  
+  /* Activo */
+  .jh-nav__link.is-active{
+    color: #fff;
+    background: rgba(10,132,255,.18);
+    box-shadow: inset 0 0 0 1px rgba(10,132,255,.25);
+  }
+  
+  /* Responsivo */
+  @media (max-width: 991.98px){
+    .jh-wrap{ padding: 10px 14px; }
+    .jh-nav{ gap: 14px; }
+    .jh-brand__name{ font-size: 1.05rem; }
+  }
+  
+  /* =========================================================
+     OPCIONAL: Tema grafito (si prefieres gris oscuro)
+     Actívalo reemplazando las variables de arriba por estas.
+     ========================================================= */
+  /*
+  :root{
+    --jh-bg:        #111826;
+    --jh-bg-strong: #0B1320;
+    --jh-text:      #EEF2F6;
+    --jh-muted:     #BAC6D2;
+    --jh-accent:    #0A84FF;
+    --jh-border:    rgba(255,255,255,.08);
+  }
+  */
